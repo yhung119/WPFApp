@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Grid.Resources >
+        <!--<Grid.Resources >
             <Storyboard x:Key="CloseLef" x:Name="CloseLeft">
                 <DoubleAnimation x:Name="animNavLinksClose"
                              Storyboard.TargetName="mainPage" Storyboard.TargetProperty="NavLinksWidth"
@@ -19,50 +19,124 @@
                              Storyboard.TargetName="mainPage" Storyboard.TargetProperty="NavLinksWidth"
                              From="0" To="170" Duration="00:00:00.2" />
             </Storyboard>
-        </Grid.Resources>
+        </Grid.Resources>-->
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="170" x:Name="NavLinksColumn" />
+            <ColumnDefinition Width="100" x:Name="NavLinksColumn" />
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Grid x:Name="grdNavLinks" Grid.Column="0">
+        <Grid x:Name="grdNavLinks" Grid.Column="0" Background="#FF5CD5F0"  >
             <!-- Navigation Buttons -->
-            <ListBox>
-                <ListBoxItem>
-                    <StackPanel Height="50">
-                        <TextBlock>Test</TextBlock>
+            <ListBox Background="Transparent"  >
+                <ListBoxItem Foreground="White" Height="75" Background="Transparent">
+                    <StackPanel Height="Auto" VerticalAlignment="Center" >
+                        <Rectangle Fill="White" Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Rectangle.OpacityMask>
+                                <VisualBrush Visual="{StaticResource appbar_edit}" />
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                        <TextBlock HorizontalAlignment="Center"><Run Text="Observation"/></TextBlock>
                     </StackPanel>
                 </ListBoxItem>
-                <ListBoxItem>
-                    <StackPanel Height="50">
-                        <TextBlock><Run Text="Test"/></TextBlock>
+                <ListBoxItem Foreground="White" Height="75">
+                    <StackPanel Height="Auto" VerticalAlignment="Center">
+                        <Rectangle Fill="White" Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Rectangle.OpacityMask>
+                                <VisualBrush Visual="{StaticResource appbar_people}" />
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                        <TextBlock HorizontalAlignment="Center"><Run Text="Recorder"/></TextBlock>
                     </StackPanel>
                 </ListBoxItem>
-                <ListBoxItem>
-                    <StackPanel Height="50">
-                        <TextBlock><Run Text="Test"/></TextBlock>
-                    </StackPanel>
-                </ListBoxItem>
-                <ListBoxItem>
-                    <StackPanel Height="50">
-                        <TextBlock><Run Text="Test"/></TextBlock>
+                <ListBoxItem Foreground="White" Height="75">
+                    <StackPanel Height="Auto" VerticalAlignment="Center">
+                        <Rectangle Fill="White" Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Rectangle.OpacityMask>
+                                <VisualBrush Visual="{StaticResource appbar_check}" />
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                        <TextBlock HorizontalAlignment="Center"><Run Text="SOP"/></TextBlock>
                     </StackPanel>
                 </ListBoxItem>
             </ListBox>
-            <!--<Rectangle Fill="Black">
-                <Rectangle.OpacityMask>
-                    <VisualBrush Visual="{StaticResource appbar_add}" Stretch="Fill" />
-                </Rectangle.OpacityMask>
-            </Rectangle>-->
+
         </Grid>
 
         <GridSplitter x:Name="spltNavLinks" Grid.Column="1" />
 
         <Grid x:Name="contentSection" Grid.Column="2">
             <!-- Content or Frame -->
-            
+            <!--<Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Controls:Tile Title="Artikel einstellen" TiltFactor="2" Grid.Column="1" Grid.Row="1" Width="300" Height="200">
+                <Rectangle Width="50" Height="50">
+                    <Rectangle.Fill>
+                        <VisualBrush Visual="{StaticResource appbar_add}" />
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Controls:Tile>
+            <Controls:Tile Title="Artikel einstellen" TiltFactor="2" Grid.Column="3" Grid.Row="1" Width="300" Height="200">
+                <Rectangle Width="50" Height="50">
+                    <Rectangle.Fill>
+                        <VisualBrush Visual="{StaticResource appbar_add}" />
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Controls:Tile>
+            <Controls:Tile Title="Artikel einstellen" TiltFactor="2" Grid.Column="5" Grid.Row="1" Width="300" Height="200">
+                <Rectangle Width="50" Height="50">
+                    <Rectangle.Fill>
+                        <VisualBrush Visual="{StaticResource appbar_add}" />
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Controls:Tile>
+            <Controls:Tile Title="Artikel einstellen" TiltFactor="2" Grid.Column="1" Grid.Row="3" Width="300" Height="200">
+                <Rectangle Width="50" Height="50">
+                    <Rectangle.Fill>
+                        <VisualBrush Visual="{StaticResource appbar_add}" />
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Controls:Tile>
+            <Controls:Tile Title="Artikel einstellen" TiltFactor="2" Grid.Column="3" Grid.Row="3" Width="300" Height="200">
+                <Rectangle Width="50" Height="50">
+                    <Rectangle.Fill>
+                        <VisualBrush Visual="{StaticResource appbar_add}" />
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Controls:Tile>
+            <Controls:Tile Title="Artikel einstellen" TiltFactor="2" Grid.Column="5" Grid.Row="3" Width="300" Height="200">
+                <Rectangle Width="50" Height="50">
+                    <Rectangle.Fill>
+                        <VisualBrush Visual="{StaticResource appbar_add}" />
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Controls:Tile>-->
+
+            <TabControl>
+                <TabItem Header="Item1">
+                    
+                </TabItem>
+                <TabItem Header="Item2">
+
+                </TabItem>
+            </TabControl>
+           
         </Grid>
     </Grid>
 </Controls:MetroWindow>
