@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:WpfApplication1"
+        
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
@@ -21,15 +22,15 @@
             </Storyboard>
         </Grid.Resources>-->
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100" x:Name="NavLinksColumn" />
+        <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="175" x:Name="NavLinksColumn" />
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>-->
 
-        <Grid x:Name="grdNavLinks" Grid.Column="0" Background="#FF5CD5F0"  >
+        <!--<Grid x:Name="grdNavLinks" Grid.Column="0"  >-->
             <!-- Navigation Buttons -->
-            <ListBox Background="Transparent"  >
+            <!--<ListBox Background="Transparent"  >
                 <ListBoxItem Foreground="White" Height="75" Background="Transparent">
                     <StackPanel Height="Auto" VerticalAlignment="Center" >
                         <Rectangle Fill="White" Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -60,14 +61,57 @@
                         <TextBlock HorizontalAlignment="Center"><Run Text="SOP"/></TextBlock>
                     </StackPanel>
                 </ListBoxItem>
-            </ListBox>
+            </ListBox>-->
+        <TabControl TabStripPlacement="Left" Margin="0,10,0,-9.5">
+                <TabItem Width="170" Height="60" >
+                    <TabItem.Header>
+                    <!--<StackPanel Height="Auto" VerticalAlignment="Center" >
+                        <Rectangle Fill="White" Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Rectangle.OpacityMask>
+                                <VisualBrush Visual="{StaticResource appbar_edit}" />
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                        <TextBlock HorizontalAlignment="Center"><Run Text="Observation"/></TextBlock>
+                    </StackPanel>-->
+                        Observation
+                    </TabItem.Header>
+                </TabItem>
+                <TabItem Margin="0" Height="60" FontWeight="Light" >
+                    <TabItem.Header>
+                        <!--<StackPanel Height="Auto" VerticalAlignment="Center">
+                            <Rectangle Fill="White" Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Rectangle.OpacityMask>
+                                    <VisualBrush Visual="{StaticResource appbar_people}" />
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                            <TextBlock HorizontalAlignment="Center"><Run Text="Recorder"/></TextBlock>
+                        </StackPanel>-->
+                        Recorder
+                   </TabItem.Header>
+                </TabItem>
+                <TabItem  Margin="0" Height="60">
+                    <TabItem.Header >
+                        SOP
+                            <!--<Rectangle Fill="White" Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Rectangle.OpacityMask>
+                                    <VisualBrush Visual="{StaticResource appbar_check}" />
+                                </Rectangle.OpacityMask>
+                            </Rectangle>-->
+                            <!--<TextBlock HorizontalAlignment="Center"><Run Text="SOP"/></TextBlock>-->
+                            
+                       
+                        
+                    </TabItem.Header>
+                    
 
-        </Grid>
+            </TabItem>
+       </TabControl>
+        <!--</Grid>
 
         <GridSplitter x:Name="spltNavLinks" Grid.Column="1" />
 
-        <Grid x:Name="contentSection" Grid.Column="2">
-            <!-- Content or Frame -->
+        <Grid x:Name="contentSection" Grid.Column="2">-->
+             <!--Content or Frame--> 
             <!--<Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="Auto"/>
@@ -128,15 +172,8 @@
                 </Rectangle>
             </Controls:Tile>-->
 
-            <TabControl>
-                <TabItem Header="Item1">
-                    
-                </TabItem>
-                <TabItem Header="Item2">
-
-                </TabItem>
-            </TabControl>
+            
            
         </Grid>
-    </Grid>
+    <!--</Grid>-->
 </Controls:MetroWindow>
