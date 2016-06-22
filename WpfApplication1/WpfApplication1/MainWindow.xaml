@@ -128,15 +128,15 @@
                 </Rectangle>
             </Controls:Tile>-->
 
-            <TabControl>
-                <TabItem Header="Item1">
-                    
+            <TabControl TabStripPlacement="Left">
+                <TabItem Header="Tab1">
+
                 </TabItem>
-                <TabItem Header="Item2">
+                <TabItem Header="Tab2">
 
                 </TabItem>
             </TabControl>
-           
+
         </Grid>
     </Grid>
 </Controls:MetroWindow>
