@@ -24,5 +24,12 @@ namespace WpfApplication1
         {
             InitializeComponent();
         }
+
+        private void Tile_Click(object sender, RoutedEventArgs e)
+        {
+            TabItem tabItem = new TabItem();
+            tabItem.Content = "JJ";
+            
+        }
     }
 }

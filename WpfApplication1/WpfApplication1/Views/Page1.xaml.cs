@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,27 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MahApps.Metro.Controls;
-using GMap.NET;
-using GMap.NET.MapProviders;
-using GMap.NET.WindowsPresentation;
 
 namespace WpfApplication1
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Page1.xaml
     /// </summary>
-    public partial class MainWindow 
+    public partial class Page1 : Grid
     {
-
-        public MainWindow()
+        public Page1()
         {
             InitializeComponent();
-
-            //config map
-            MainMap.MapProvider = GMap.NET.MapProviders.GoogleMapProvider.Instance;
-            MainMap.Position = new PointLatLng(23.6978, 120.9650);
-            
         }
     }
 }
