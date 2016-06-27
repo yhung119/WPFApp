@@ -16,7 +16,7 @@ namespace WpfApplication1.MapControl
         Label Label;
         GMapMarker Marker;
         MainWindow MainWindow;
-        //MapTest MapTest;
+        MapTest MapTest;
 
         public RedMarker(MainWindow window, GMapMarker marker, string title)
         {
