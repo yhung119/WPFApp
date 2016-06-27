@@ -1,0 +1,42 @@
+﻿<Grid x:Class="WpfApplication1.MapTest"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApplication1"
+      mc:Ignorable="d" 
+      d:DesignHeight="2000" d:DesignWidth="500"
+      >
+    <Grid.RowDefinitions>
+        <RowDefinition Height="500"/>
+        <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <GroupBox Header="Test Map">
+
+        <local:Map x:Name="TestMap" Grid.Row="0" Zoom="13" MaxZoom="24" MinZoom="1" IsManipulationEnabled="True"/>
+
+    </GroupBox>
+    
+    <!--Touch Control for the maps 
+        including: ZoomIn, ZoomOut
+                   Add Marker, Remove Marker
+    -->
+    <GroupBox Name="Group2" Grid.Row="1" Header="Content">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                <Button Name="ZoomIn" Margin="12" Height="30" Width="Auto">
+                    ZoomIn
+                </Button>
+                <Button Name="ZoomOut" Margin="12" Height="30" Width="Auto">
+                    ZoomOut
+                </Button>
+            </StackPanel>
+        </Grid>
+        
+    </GroupBox>
+
+
+</Grid>

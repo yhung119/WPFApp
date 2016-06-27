@@ -26,42 +26,42 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Controls:Tile Title="Artikel einstellen" TiltFactor="2" Grid.Column="1" Grid.Row="1" Width="300" Height="200" Click="Tile_Click">
+        <Controls:Tile Name="Debris_Flow" Title="Debris Flows" TiltFactor="2" Grid.Column="1" Grid.Row="1" Width="300" Height="200" Click="Tile_Click">
             <Rectangle Width="50" Height="50">
                 <Rectangle.Fill>
                     <VisualBrush Visual="{StaticResource appbar_add}" />
                 </Rectangle.Fill>
             </Rectangle>
         </Controls:Tile>
-        <Controls:Tile Title="Artikel einstellen" TiltFactor="2" Grid.Column="3" Grid.Row="1" Width="300" Height="200">
+        <Controls:Tile Name="Tile2" Title="Fire" TiltFactor="2" Grid.Column="3" Grid.Row="1" Width="300" Height="200" TouchDown="Tile_TouchDown">
             <Rectangle Width="50" Height="50">
                 <Rectangle.Fill>
                     <VisualBrush Visual="{StaticResource appbar_add}" />
                 </Rectangle.Fill>
             </Rectangle>
         </Controls:Tile>
-        <Controls:Tile Title="Artikel einstellen" TiltFactor="2" Grid.Column="5" Grid.Row="1" Width="300" Height="200">
+        <Controls:Tile Title="Flood" TiltFactor="2" Grid.Column="5" Grid.Row="1" Width="300" Height="200">
             <Rectangle Width="50" Height="50">
                 <Rectangle.Fill>
                     <VisualBrush Visual="{StaticResource appbar_add}" />
                 </Rectangle.Fill>
             </Rectangle>
         </Controls:Tile>
-        <Controls:Tile Title="Artikel einstellen" TiltFactor="2" Grid.Column="1" Grid.Row="3" Width="300" Height="200">
+        <Controls:Tile Title="Protected Objects" TiltFactor="2" Grid.Column="1" Grid.Row="3" Width="300" Height="200">
             <Rectangle Width="50" Height="50">
                 <Rectangle.Fill>
                     <VisualBrush Visual="{StaticResource appbar_add}" />
                 </Rectangle.Fill>
             </Rectangle>
         </Controls:Tile>
-        <Controls:Tile Title="Artikel einstellen" TiltFactor="2" Grid.Column="3" Grid.Row="3" Width="300" Height="200">
+        <Controls:Tile Title="LandSlide" TiltFactor="2" Grid.Column="3" Grid.Row="3" Width="300" Height="200">
             <Rectangle Width="50" Height="50">
                 <Rectangle.Fill>
                     <VisualBrush Visual="{StaticResource appbar_add}" />
                 </Rectangle.Fill>
             </Rectangle>
         </Controls:Tile>
-        <Controls:Tile Title="Artikel einstellen" TiltFactor="2" Grid.Column="5" Grid.Row="3" Width="300" Height="200">
+        <Controls:Tile Title="Damaged Buildings" TiltFactor="2" Grid.Column="5" Grid.Row="3" Width="300" Height="200">
             <Rectangle Width="50" Height="50">
                 <Rectangle.Fill>
                     <VisualBrush Visual="{StaticResource appbar_add}" />

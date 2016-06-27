@@ -1,0 +1,25 @@
+﻿<Grid x:Class="WpfApplication1.DebrisFlowPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApplication1"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      >
+    <Grid.RowDefinitions>
+            <RowDefinition Height="500"/>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <GroupBox Header="Debris Flow Map">
+
+            <local:Map  x:Name="DebrisFlowMap" Grid.Row="0" Zoom="8" MinZoom="18" MaxZoom="3" IsManipulationEnabled="True"/>
+
+        </GroupBox>
+    
+        <GroupBox Name="Group2" Grid.Row="1" Header="Content">
+            <TextBlock Grid.Row="1">HIIII</TextBlock>
+        </GroupBox>
+        
+
+</Grid>

@@ -9,23 +9,31 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <TabControl TabStripPlacement="Left" Margin="0,10,0,-9.5">
-            <TabItem x:Name="ObservationTab" Width="170" Height="60" Header="Observation">
-                <local:ObservationTab/>
+        <TabControl Name="_tabControl" TabStripPlacement="Left" Margin="0,10,0,-9.5">
+            <TabItem x:Name="_observationTab" Width="170" Height="60" Header="Observation">
+                <ScrollViewer PanningMode="HorizontalFirst" >
+                    <local:ObservationTab/>
+                </ScrollViewer>
             </TabItem>
             
-            <TabItem Margin="0" Height="60" FontWeight="Light" Header="Recorder" >
-                  
+            <TabItem Name="_recorderTab" Margin="0" Height="60" FontWeight="Light" Header="Recorder" >
+                <local:MapTest />
             </TabItem>
             
             <TabItem  Margin="0" Height="60" Header="SOP">
-              
+                <local:DebrisFlowPage/>
             </TabItem>
             
-            <TabItem Margin="0" Height="60" Header="MAP">
-                <GroupBox Name="MapGroup" Header="GMap">
-                    <local:Map x:Name="MainMap" Zoom="13" MaxZoom="24" MinZoom="1" />
-                </GroupBox>
+            <TabItem Name="_mapTab" Margin="0" Height="60" Header="MAP" TouchDown="_mapTab_TouchDown">
+                
+                <Grid Name="MapGroup" >
+                   
+                    <local:Map x:Name="MainMap" Zoom="13" MaxZoom="24" MinZoom="1" TouchMove="MainMap_TouchMove" IsManipulationEnabled="True"/>
+                    
+                    
+                </Grid>
+                
+               
             </TabItem>
        </TabControl>
         

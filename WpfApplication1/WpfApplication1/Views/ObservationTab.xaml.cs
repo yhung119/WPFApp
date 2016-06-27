@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApplication1;
 
 namespace WpfApplication1
 {
@@ -27,9 +28,14 @@ namespace WpfApplication1
 
         private void Tile_Click(object sender, RoutedEventArgs e)
         {
-            TabItem tabItem = new TabItem();
-            tabItem.Content = "JJ";
-            
+            ((MainWindow)System.Windows.Application.Current.MainWindow)._tabControl.SelectedItem = ((MainWindow)System.Windows.Application.Current.MainWindow)._mapTab;
+
+
+        }
+        
+        private void Tile_TouchDown(object sender, TouchEventArgs e)
+        {
+            Tile2.Title = "hi";
         }
     }
 }
