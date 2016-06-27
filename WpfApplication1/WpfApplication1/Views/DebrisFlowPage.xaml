@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
         <GroupBox Header="Debris Flow Map">
 
-            <local:Map  x:Name="DebrisFlowMap" Grid.Row="0" Zoom="8" MinZoom="18" MaxZoom="3" IsManipulationEnabled="True"/>
+            <local:Map  x:Name="DebrisFlowMap" Grid.Row="0" Zoom="8" MinZoom="3" MaxZoom="18" IsManipulationEnabled="True"/>
 
         </GroupBox>
     

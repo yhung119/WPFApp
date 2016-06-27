@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfApplication1;
 
+
 namespace WpfApplication1
 {
     /// <summary>
@@ -21,15 +22,17 @@ namespace WpfApplication1
     /// </summary>
     public partial class ObservationTab : Grid
     {
+        
         public ObservationTab()
         {
+           
             InitializeComponent();
         }
 
         private void Tile_Click(object sender, RoutedEventArgs e)
         {
             ((MainWindow)System.Windows.Application.Current.MainWindow)._tabControl.SelectedItem = ((MainWindow)System.Windows.Application.Current.MainWindow)._mapTab;
-
+            
 
         }
         

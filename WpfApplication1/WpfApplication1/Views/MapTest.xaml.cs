@@ -29,22 +29,33 @@ namespace WpfApplication1
         {
             InitializeComponent();
 
-            TestMap.MapProvider = GMap.NET.MapProviders.GoogleMapProvider.Instance;
-            TestMap.Position = new PointLatLng(23.6978, 120.9650);
-            TestMap.OnPositionChanged += new PositionChanged(TestMap_PositionChanged);
+            Map.MapProvider = GMap.NET.MapProviders.GoogleMapProvider.Instance;
+            Map.Position = new PointLatLng(23.6978, 120.9650);
+            Map.OnPositionChanged += new PositionChanged(TestMap_PositionChanged);
             ZoomIn.TouchDown += new EventHandler<TouchEventArgs>(ZoomIn_Button_Touch);
             ZoomOut.TouchDown += new EventHandler<TouchEventArgs>(ZoomOut_Button_Touch);
-
+            ZoomIn.Click += new System.Windows.RoutedEventHandler(ZoomIn_Click);
+            ZoomOut.Click += new System.Windows.RoutedEventHandler(ZoomOut_Click);
         }
 
         private void ZoomIn_Button_Touch(object sender, TouchEventArgs t)
         {
-            TestMap.Zoom ++;
+            Map.Zoom++;
         }
         private void ZoomOut_Button_Touch(object sender, TouchEventArgs t)
         {
-            TestMap.Zoom--;
+            Map.Zoom--;
         }
+        private void ZoomIn_Click(object sender, RoutedEventArgs m)
+        {
+            ZoomIn_Button_Touch(sender, null);
+        }
+        private void ZoomOut_Click(object sender, RoutedEventArgs m)
+        {
+            ZoomOut_Button_Touch(sender, null);
+        }
+
+
 
         private void TestMap_PositionChanged(PointLatLng point)
         {

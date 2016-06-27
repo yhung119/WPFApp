@@ -17,23 +17,29 @@
             </TabItem>
             
             <TabItem Name="_recorderTab" Margin="0" Height="60" FontWeight="Light" Header="Recorder" >
-                <local:MapTest />
+                
             </TabItem>
             
             <TabItem  Margin="0" Height="60" Header="SOP">
-                <local:DebrisFlowPage/>
+                
             </TabItem>
             
-            <TabItem Name="_mapTab" Margin="0" Height="60" Header="MAP" TouchDown="_mapTab_TouchDown">
-                
-                <Grid Name="MapGroup" >
+            <TabItem Name="_mapTab" Margin="0" Height="60" Header="MAP" >
+                <local:MapTest />
+                <!--<Grid Name="MapGroup" >
                    
                     <local:Map x:Name="MainMap" Zoom="13" MaxZoom="24" MinZoom="1" TouchMove="MainMap_TouchMove" IsManipulationEnabled="True"/>
-                    
-                    
-                </Grid>
+             
+                </Grid>-->
                 
                
+            </TabItem>
+            
+            <!--Below tabs are for child of Observation Tab
+                Need a better way to redirect the pages
+            -->
+            <TabItem Margin="0" Height="0">
+                <local:DebrisFlowPage></local:DebrisFlowPage>
             </TabItem>
        </TabControl>
         

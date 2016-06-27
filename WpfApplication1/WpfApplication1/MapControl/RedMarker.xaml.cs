@@ -16,6 +16,7 @@ namespace WpfApplication1.MapControl
         Label Label;
         GMapMarker Marker;
         MainWindow MainWindow;
+        //MapTest MapTest;
 
         public RedMarker(MainWindow window, GMapMarker marker, string title)
         {
@@ -23,6 +24,7 @@ namespace WpfApplication1.MapControl
 
             this.MainWindow = window;
             this.Marker = marker;
+           
 
             Popup = new Popup();
             Label = new Label();
@@ -65,8 +67,10 @@ namespace WpfApplication1.MapControl
         {
             if (e.LeftButton == MouseButtonState.Pressed && IsMouseCaptured)
             {
-                Point p = e.GetPosition(MainWindow.MainMap);
-                Marker.Position = MainWindow.MainMap.FromLocalToLatLng((int)p.X, (int)p.Y);
+                //Point p = e.GetPosition(MainWindow.MainMap);
+                Point p2 = e.GetPosition(MapTest.Map);
+                Marker.Position = MapTest.Map.FromLocalToLatLng((int)p2.X, (int)p2.Y);
+                //Marker.Position = MainWindow.MainMap.FromLocalToLatLng((int)p.X, (int)p.Y);
             }
         }
 
