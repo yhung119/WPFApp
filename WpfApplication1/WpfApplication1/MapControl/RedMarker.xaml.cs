@@ -15,14 +15,14 @@ namespace WpfApplication1.MapControl
         Popup Popup;
         Label Label;
         GMapMarker Marker;
-        MainWindow MainWindow;
+        //MainWindow MainWindow;
         MapTest MapTest;
 
-        public RedMarker(MainWindow window, GMapMarker marker, string title)
+        public RedMarker(MapTest window, GMapMarker marker, string title)
         {
             this.InitializeComponent();
 
-            this.MainWindow = window;
+            this.MapTest = window;
             this.Marker = marker;
            
 

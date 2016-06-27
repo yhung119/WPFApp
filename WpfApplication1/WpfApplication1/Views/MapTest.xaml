@@ -11,10 +11,15 @@
         <RowDefinition Height="500"/>
         <RowDefinition Height="Auto" />
     </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1000" />
+        <ColumnDefinition Width="Auto" />
+    </Grid.ColumnDefinitions>
     <GroupBox Header="Map">
-
-        <local:Map x:Name="Map" Grid.Row="0" Zoom="13" MaxZoom="24" MinZoom="1" IsManipulationEnabled="True"/>
-
+        <GroupItem>
+            <local:Map x:Name="Map" Grid.Row="0" Zoom="8" MaxZoom="24" MinZoom="1" IsManipulationEnabled="True"/>
+        </GroupItem>
+        
     </GroupBox>
     
     <!--Touch Control for the maps 
@@ -22,12 +27,10 @@
                    Add Marker, Remove Marker
                    Track User Position
     -->
-    <GroupBox Name="Group2" Grid.Row="1" Header="Controls">
+    <GroupBox Name="Group2" Grid.Row="0" Grid.Column="1" Header="Controls">
         <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="60" />
-            </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0" Orientation="Horizontal">
+          
+            <StackPanel  Orientation="Horizontal" Height="60">
                 <Button Name="ZoomIn" Margin="12" Height="30" Width="Auto">
                     ZoomIn
                 </Button>

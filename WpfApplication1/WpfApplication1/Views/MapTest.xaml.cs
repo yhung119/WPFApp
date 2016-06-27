@@ -25,6 +25,8 @@ namespace WpfApplication1
     /// </summary>
     public partial class MapTest
     {
+
+        GMapMarker currentMarker;
         public MapTest()
         {
             InitializeComponent();
@@ -32,9 +34,20 @@ namespace WpfApplication1
             Map.MapProvider = GMap.NET.MapProviders.GoogleMapProvider.Instance;
             Map.Position = new PointLatLng(23.6978, 120.9650);
             Map.OnPositionChanged += new PositionChanged(TestMap_PositionChanged);
-            
+            Map.Zoom = 8;
+
             ZoomIn.Click += new System.Windows.RoutedEventHandler(ZoomIn_Click);
             ZoomOut.Click += new System.Windows.RoutedEventHandler(ZoomOut_Click);
+
+
+            currentMarker = new GMapMarker(Map.Position);
+            {
+
+                currentMarker.Shape = new RedMarker(this, currentMarker, "Marker");
+                currentMarker.Offset = new Point(-15, -15);
+                currentMarker.ZIndex = int.MaxValue;
+                Map.Markers.Add(currentMarker);
+            }
         }
 
         private void ZoomIn_Click(object sender, RoutedEventArgs m)
