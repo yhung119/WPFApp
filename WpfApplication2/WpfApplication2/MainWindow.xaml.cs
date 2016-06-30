@@ -12,28 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Device.Location;
-using GMap.NET;
-using GMap.NET.MapProviders;
-using GMap.NET.WindowsPresentation;
-using WpfApplication1.MapControl;
 
-
-namespace WpfApplication1
+namespace WpfApplication2
 {
     /// <summary>
-    /// Interaction logic for DebrisFlowPage.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class DebrisFlowPage
+    public partial class MainWindow : Window
     {
-        public DebrisFlowPage()
+        public MainWindow()
         {
             InitializeComponent();
-
-            //DebrisFlowMap.MapProvider = GMap.NET.MapProviders.GoogleMapProvider.Instance;
-            //DebrisFlowMap.Position = new PointLatLng(23.6978, 120.9650);
-            
-
         }
     }
 }

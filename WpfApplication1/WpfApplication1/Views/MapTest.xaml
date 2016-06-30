@@ -4,43 +4,33 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApplication1"
+      
       mc:Ignorable="d" 
+      
       d:DesignHeight="700" d:DesignWidth="500"
       >
     <Grid.RowDefinitions>
-        <RowDefinition Height="500"/>
+        <RowDefinition Height="700"/>
         <RowDefinition Height="Auto" />
     </Grid.RowDefinitions>
     <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="1000" />
+        <ColumnDefinition Width="*" />
         <ColumnDefinition Width="Auto" />
     </Grid.ColumnDefinitions>
-    <GroupBox Header="Map">
-        <GroupItem>
-            <local:Map x:Name="Map" Grid.Row="0" Zoom="8" MaxZoom="24" MinZoom="1" IsManipulationEnabled="True"/>
-        </GroupItem>
-        
-    </GroupBox>
     
+        
+    <!--<map:GMapControl  Grid.Row="0" x:Name="Map" Zoom="8" MaxZoom="24" MinZoom="1" IsManipulationEnabled="True"
+                       Stylus.IsPressAndHoldEnabled="True"/>-->
+    <local:GMAP Grid.Row="0"/>
+
+
+
+
     <!--Touch Control for the maps 
         including: ZoomIn, ZoomOut
                    Add Marker, Remove Marker
                    Track User Position
     -->
-    <GroupBox Name="Group2" Grid.Row="0" Grid.Column="1" Header="Controls">
-        <Grid>
-          
-            <StackPanel  Orientation="Horizontal" Height="60">
-                <Button Name="ZoomIn" Margin="12" Height="30" Width="Auto">
-                    ZoomIn
-                </Button>
-                <Button Name="ZoomOut" Margin="12" Height="30" Width="Auto">
-                    ZoomOut
-                </Button>
-            </StackPanel>
-        </Grid>
-        
-    </GroupBox>
-
+    
 
 </Grid>

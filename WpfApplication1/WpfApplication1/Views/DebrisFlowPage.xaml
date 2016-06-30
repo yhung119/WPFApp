@@ -7,19 +7,23 @@
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
       >
+   
     <Grid.RowDefinitions>
-            <RowDefinition Height="500"/>
+            <RowDefinition Height="700"/>
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <GroupBox Header="Debris Flow Map">
 
-            <local:Map  x:Name="DebrisFlowMap" Grid.Row="0" Zoom="8" MinZoom="3" MaxZoom="18" IsManipulationEnabled="True"/>
+            <local:BingMap />
 
         </GroupBox>
     
         <GroupBox Name="Group2" Grid.Row="1" Header="Content">
-            <TextBlock Grid.Row="1">HIIII</TextBlock>
-        </GroupBox>
+            <StackPanel>
+                <TextBlock Grid.Row="1">HIIII</TextBlock>
+                <TextBox></TextBox>
+            </StackPanel>
+         </GroupBox>
         
 
 </Grid>

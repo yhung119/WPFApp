@@ -17,12 +17,14 @@ namespace WpfApplication1.MapControl
         GMapMarker Marker;
         //MainWindow MainWindow;
         MapTest MapTest;
+        GMAP gmap;
+        TouchDevice markerTouchDevice;
 
-        public RedMarker(MapTest window, GMapMarker marker, string title)
+        public RedMarker(GMAP gmap,GMapMarker marker, string title)
         {
             this.InitializeComponent();
-
-            this.MapTest = window;
+            this.gmap = gmap;
+            //this.MapTest = window;
             this.Marker = marker;
            
 
@@ -36,7 +38,9 @@ namespace WpfApplication1.MapControl
             this.MouseMove += new MouseEventHandler(CustomMarkerDemo_MouseMove);
             this.MouseLeftButtonUp += new MouseButtonEventHandler(CustomMarkerDemo_MouseLeftButtonUp);
             this.MouseLeftButtonDown += new MouseButtonEventHandler(CustomMarkerDemo_MouseLeftButtonDown);
-
+            this.TouchMove += new System.EventHandler<TouchEventArgs>(CustomMarkerDemo_TouchMove);
+            this.TouchDown += new System.EventHandler<TouchEventArgs>(CustomMarkerDemo_TouchDown);
+            
             Popup.Placement = PlacementMode.Mouse;
             {
                 Label.Background = Brushes.Blue;
@@ -68,12 +72,19 @@ namespace WpfApplication1.MapControl
             if (e.LeftButton == MouseButtonState.Pressed && IsMouseCaptured)
             {
                 //Point p = e.GetPosition(MainWindow.MainMap);
-                Point p2 = e.GetPosition(MapTest.Map);
-                Marker.Position = MapTest.Map.FromLocalToLatLng((int)p2.X, (int)p2.Y);
+                //Point p2 = e.GetPosition(MapTest.Map);
+                //Marker.Position = MapTest.Map.FromLocalToLatLng((int)p2.X, (int)p2.Y);
                 //Marker.Position = MainWindow.MainMap.FromLocalToLatLng((int)p.X, (int)p.Y);
+                Point p = e.GetPosition(gmap);
+                Marker.Position = gmap.Map.FromLocalToLatLng((int)p.X, (int)p.Y);
             }
         }
-
+        void CustomMarkerDemo_TouchMove(object sender, TouchEventArgs e)
+        {
+            TouchPoint tp = e.GetTouchPoint(gmap);
+            Point p = tp.Position;
+            Marker.Position = gmap.Map.FromLocalToLatLng((int)p.X, (int)p.Y);
+        }
         void CustomMarkerDemo_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (!IsMouseCaptured)
@@ -82,12 +93,27 @@ namespace WpfApplication1.MapControl
             }
         }
 
+        void CustomMarkerDemo_TouchDown(object sender, TouchEventArgs e)
+        {
+            e.TouchDevice.Capture(null);
+            e.TouchDevice.Capture(this);
+            if(markerTouchDevice == null)
+            {
+                markerTouchDevice = e.TouchDevice;
+            }
+            e.Handled = true;
+        }
+
         void CustomMarkerDemo_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             if (IsMouseCaptured)
             {
                 Mouse.Capture(null);
             }
+        }
+        void CustomMarkerDemo_TouchUp(object sender, TouchEventArgs e)
+        {
+            e.TouchDevice.Capture(null);
         }
 
         void MarkerControl_MouseLeave(object sender, MouseEventArgs e)

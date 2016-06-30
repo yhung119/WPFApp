@@ -22,11 +22,13 @@
             </TabItem>
             
             <TabItem  Margin="0" Height="60" Header="SOP">
-                <TextBlock>SOP</TextBlock>
+
             </TabItem>
             
             <TabItem Name="_mapTab" Margin="0" Height="60" Header="MAP" >
-                <local:MapTest />
+                <ScrollViewer PanningMode="Both">
+                    <local:MapTest />
+                </ScrollViewer>
                 <!--<Grid Name="MapGroup" >
                    
                     <local:Map x:Name="MainMap" Zoom="13" MaxZoom="24" MinZoom="1" TouchMove="MainMap_TouchMove" IsManipulationEnabled="True"/>
@@ -39,7 +41,7 @@
             <!--Below tabs are for child of Observation Tab
                 Need a better way to redirect the pages
             -->
-            <TabItem Margin="0" Height="0">
+            <TabItem Name="_debrisFlowTab" Margin="0" Height="0">
                 <local:DebrisFlowPage></local:DebrisFlowPage>
             </TabItem>
        </TabControl>

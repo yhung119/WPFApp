@@ -31,7 +31,7 @@ namespace WpfApplication1
 
         private void Tile_Click(object sender, RoutedEventArgs e)
         {
-            ((MainWindow)System.Windows.Application.Current.MainWindow)._tabControl.SelectedItem = ((MainWindow)System.Windows.Application.Current.MainWindow)._mapTab;
+            ((MainWindow)System.Windows.Application.Current.MainWindow)._tabControl.SelectedItem = ((MainWindow)System.Windows.Application.Current.MainWindow)._debrisFlowTab;
             
 
         }

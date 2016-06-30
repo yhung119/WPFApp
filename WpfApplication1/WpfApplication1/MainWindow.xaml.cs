@@ -18,6 +18,7 @@ using System.Device.Location;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsPresentation;
 using WpfApplication1.MapControl;
+using System.ComponentModel;
 
 
 namespace WpfApplication1
@@ -35,26 +36,16 @@ namespace WpfApplication1
         public MainWindow()
         {
             InitializeComponent();
-            
-            //config map
-            //MainMap.MapProvider = GMap.NET.MapProviders.GoogleMapProvider.Instance;
-            //MainMap.Position = new PointLatLng(23.6978, 120.9650);
-            //MainMap.OnPositionChanged += new PositionChanged(MainMap_PositionChanged);
-            //MainMap.Zoom = 8;
-            //MainMap.TouchEnabled = true;
-            //MainMap.TouchDown += new EventHandler<TouchEventArgs>(MainMap_TouchDown);
 
-            //marker
-            //currentMarker = new GMapMarker(MainMap.Position);
-            //{
-                
-            //    currentMarker.Shape = new RedMarker(this,currentMarker,"Marker");
-            //    currentMarker.Offset = new Point(-15, -15);
-            //    currentMarker.ZIndex = int.MaxValue;
-            //    MainMap.Markers.Add(currentMarker);
-            //}
+            Closing += new CancelEventHandler(MainWindow_Closing);
+            
 
             
+        }
+        void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            GMaps.Instance.DisableTileHost();
+            GMaps.Instance.CancelTileCaching();
         }
 
         //private void MainMap_TouchMove(object sender, TouchEventArgs e)
@@ -73,30 +64,12 @@ namespace WpfApplication1
         //    {
         //        _mapTab.Header = "Hi";
         //    }
-            
+
 
         //}
         //private void MainMap_PositionChanged(PointLatLng point)
         //{
 
-        //}
-
-        //private async void _mapTab_TouchDown(object sender, TouchEventArgs e)
-        //{
-        //    //position
-        //    GeoCoordinateWatcher geoCoordinateWatcher;
-        //    geoCoordinateWatcher = new GeoCoordinateWatcher(GeoPositionAccuracy.High);
-        //    geoCoordinateWatcher.MovementThreshold = 100;
-        //    geoCoordinateWatcher.PositionChanged += (watcherSender, eventArgs) => { };
-
-        //    geoCoordinateWatcher.TryStart(false, TimeSpan.FromMilliseconds(2000));
-
-        //    GeoPosition<GeoCoordinate> geoPosition = geoCoordinateWatcher.Position;
-        //    await Task.Delay(5000);
-        //    if (geoPosition == null)
-        //    {
-        //        _observationTab.Header = String.Format("{0}+{1}", geoPosition.Location.Altitude, geoPosition.Location.Latitude);
-        //    }
         //}
     }
 }
